@@ -6,7 +6,7 @@ Home Assistant custom integration that listens for incoming calls on the FRITZ!B
 
 Copy `custom_components/fritzfon` into Home Assistant's `custom_components` directory, restart Home Assistant, then add **FRITZ!Fon Call Alert** under **Settings → Devices & services → Add integration**. Enter the FRITZ!Box hostname or IP and credentials for a FRITZ!Box user allowed to access telephony and its phonebook.
 
-Before setup, enable the FRITZ!Box call monitor by dialing `#96*5*` from a phone connected directly to the box. Allow Home Assistant to reach TCP port `1012` (call monitor) and TCP port `49000` (TR-064 phonebook) on the FRITZ!Box. The integration downloads the first available phonebook during setup and resolves the caller name locally.
+Before setup, enable the FRITZ!Box call monitor by dialing `#96*5*` from a phone connected directly to the box. Enable **Permit access for applications** under **Home Network → Network → Network Settings**. Allow Home Assistant to reach TCP port `1012` (call monitor) and TCP port `49000` (TR-064 phonebook) on the FRITZ!Box. The integration downloads the first available phonebook during setup and resolves the caller name locally.
 
 ## Full-screen kiosk alert
 

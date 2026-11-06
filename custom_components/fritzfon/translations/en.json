@@ -1,0 +1,18 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to your FRITZ!Box",
+        "description": "Enter the FRITZ!Box host and a user with telephony permissions. Enable the call monitor first by dialing #96*5* from a phone connected directly to the FRITZ!Box. TR-064 must also be enabled in the FRITZ!Box network settings.",
+        "data": {"host": "IP address or hostname", "username": "FRITZ!Box username", "password": "Password"}
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to TR-064 on TCP port 49000. Enable app access in the FRITZ!Box network settings and check the address.",
+      "call_monitor_unavailable": "The call monitor is not reachable on TCP port 1012. Enable it by dialing #96*5* from a phone connected directly to the FRITZ!Box.",
+      "invalid_auth": "The username or password was rejected.",
+      "insufficient_permissions": "This FRITZ!Box user does not have permission to access the phonebook."
+    },
+    "abort": {"already_configured": "This FRITZ!Box is already configured."}
+  }
+}

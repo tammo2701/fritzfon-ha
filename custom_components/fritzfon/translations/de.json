@@ -1,0 +1,18 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Mit der FRITZ!Box verbinden",
+        "description": "Gib den Hostnamen oder die IP-Adresse der FRITZ!Box und einen Benutzer mit Telefonie-Berechtigung ein. Aktiviere zuerst den Call Monitor: Wähle an einem direkt mit der FRITZ!Box verbundenen Telefon #96*5*. Außerdem muss der Zugriff für Anwendungen (TR-064) in den Netzwerkeinstellungen aktiviert sein.",
+        "data": {"host": "IP-Adresse oder Hostname", "username": "FRITZ!Box-Benutzername", "password": "Passwort"}
+      }
+    },
+    "error": {
+      "cannot_connect": "TR-064 auf TCP-Port 49000 ist nicht erreichbar. Aktiviere den Zugriff für Anwendungen in den FRITZ!Box-Netzwerkeinstellungen und prüfe die Adresse.",
+      "call_monitor_unavailable": "Der Call Monitor auf TCP-Port 1012 ist nicht erreichbar. Wähle #96*5* an einem direkt mit der FRITZ!Box verbundenen Telefon, um ihn zu aktivieren.",
+      "invalid_auth": "Benutzername oder Passwort wurden abgelehnt.",
+      "insufficient_permissions": "Dieser FRITZ!Box-Benutzer darf nicht auf das Telefonbuch zugreifen."
+    },
+    "abort": {"already_configured": "Diese FRITZ!Box ist bereits eingerichtet."}
+  }
+}

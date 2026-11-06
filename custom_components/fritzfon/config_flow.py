@@ -6,6 +6,7 @@ import asyncio
 import voluptuous as vol
 from fritzconnection.core.exceptions import FritzConnectionException, FritzSecurityError
 from fritzconnection.lib.fritzphonebook import FritzPhonebook
+from requests.exceptions import RequestException
 
 from homeassistant import config_entries
 from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
@@ -28,7 +29,7 @@ class FritzFonConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 writer.close()
                 await writer.wait_closed()
             except (OSError, asyncio.TimeoutError):
-                errors["base"] = "cannot_connect"
+                errors["base"] = "call_monitor_unavailable"
             else:
                 try:
                     await self.hass.async_add_executor_job(
@@ -39,7 +40,7 @@ class FritzFonConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     errors["base"] = "insufficient_permissions"
                 except FritzConnectionException:
                     errors["base"] = "invalid_auth"
-                except OSError:
+                except (RequestException, OSError, asyncio.TimeoutError):
                     errors["base"] = "cannot_connect"
                 else:
                     return self.async_create_entry(
